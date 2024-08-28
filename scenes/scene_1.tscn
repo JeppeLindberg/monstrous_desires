@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3wx2n7i58lnm"]
+
+[ext_resource type="Script" path="res://scenes/rakugo/Game/game.gd" id="1_6s85y"]
+[ext_resource type="PackedScene" uid="uid://cdwvtbtwmrqbn" path="res://scenes/rakugo/PauseMenu/PauseMenu.tscn" id="2_eu6b4"]
+[ext_resource type="PackedScene" uid="uid://cp3p3kqcjh0me" path="res://scenes/rakugo/EndMenu/EndMenu.tscn" id="3_yj65m"]
+[ext_resource type="PackedScene" uid="uid://cnsu6sfdku23l" path="res://scenes/rakugo/DialogueUI/dialogue_ui.tscn" id="4_48852"]
+[ext_resource type="Script" path="res://scripts/scene.gd" id="5_nrjvm"]
+[ext_resource type="Texture2D" uid="uid://dhcouhdnbufb" path="res://icon.svg" id="6_tf730"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_6s85y")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="GUI" instance=ExtResource("2_eu6b4")]
+unique_name_in_owner = true
+visible = false
+
+[node name="EndMenu" parent="GUI" instance=ExtResource("3_yj65m")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DialogueUI" parent="GUI" instance=ExtResource("4_48852")]
+
+[node name="dialogue" type="Node" parent="."]
+script = ExtResource("5_nrjvm")
+raku_script = "res://scripts/library/scene_1.rk"
+auto_start = true
+
+[node name="Godot" type="Sprite2D" parent="." groups=["show"]]
+position = Vector2(623, 274)
+texture = ExtResource("6_tf730")
+
+[node name="Red" type="Sprite2D" parent="Godot"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("6_tf730")
+
+[node name="Blue" type="Sprite2D" parent="Godot/Red"]
+visible = false
+self_modulate = Color(5.77569e-07, 0.581803, 0.664193, 1)
+texture = ExtResource("6_tf730")
+
+[node name="Green" type="Sprite2D" parent="Godot"]
+visible = false
+self_modulate = Color(0, 1, 0, 1)
+texture = ExtResource("6_tf730")
+
+[node name="TestNode" type="Node" parent="Godot"]

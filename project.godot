@@ -19,12 +19,12 @@ rakugo/save_folder="user://saves"
 [application]
 
 config/name="monstrous_desires"
-run/main_scene="res://scenes/Bootstrap/bootstrap.tscn"
+run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-addons/rakugo_game_template/loading_scene_path="res://scenes/LoadingScreen/LoadingScreen.tscn"
-addons/rakugo_game_template/main_menu_path="res://scenes/MainMenu/MainMenu.tscn"
-addons/rakugo_game_template/first_game_scene_path="res://scenes/Game/game.tscn"
+addons/rakugo_game_template/loading_scene_path="res://scenes/rakugo/LoadingScreen/LoadingScreen.tscn"
+addons/rakugo_game_template/main_menu_path="res://scenes/rakugo/MainMenu/MainMenu.tscn"
+addons/rakugo_game_template/first_game_scene_path="res://scenes/rakugo/Game/game.tscn"
 addons/visual_novel_kit/default_markup_setting="res://addons/visualnovelkit/default_markups/def_markdown.tres"
 addons/visual_novel_kit/at_predefind/center=Vector2(50, 50)
 addons/visual_novel_kit/at_predefind/left=25.0
