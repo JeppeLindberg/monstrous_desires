@@ -42,8 +42,8 @@ func change_scene_to_resource() -> void:
 	var current_tree = get_tree()
 	current_tree.paused = true
 	
-	Transitions.transition(Transitions.transition_type.Diamond)
-	await Transitions.animation_player.animation_finished
+	# Transitions.transition(Transitions.transition_type.Diamond)
+	# await Transitions.animation_player.animation_finished
 	
 	var err = current_tree.change_scene_to_packed(get_resource())
 	if err:
@@ -65,8 +65,8 @@ func change_scene_to_loading_screen() -> void:
 		get_tree().quit()
 	get_tree().paused = false
 	set_process(true)
-	Transitions.transition(Transitions.transition_type.Diamond, true)
-	await Transitions.animation_player.animation_finished
+	# Transitions.transition(Transitions.transition_type.Diamond, true)
+	# await Transitions.animation_player.animation_finished
 
 func set_loading_screen(value : String) -> void:
 	if value == "":
@@ -103,7 +103,7 @@ func load_scene_in_background(scene_path : String):
 	ResourceLoader.load_threaded_request(_scene_path)
 	set_process(true)
 
-func change_scene(scene_path : String, wait_after_load : bool = true) -> void:
+func change_scene(scene_path : String, wait_after_load : bool = false) -> void:
 	if scene_path == null or scene_path.is_empty():
 		push_error("no path given to load")
 		return
